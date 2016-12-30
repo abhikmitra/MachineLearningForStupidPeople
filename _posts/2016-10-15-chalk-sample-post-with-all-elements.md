@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Chalk sample post with all elements"
+title: "Chalk sample post with all elements12"
 description: "Have a look at all the predesigned elements you can use in Chalk."
 og_image: "documentation/sample-image.jpg"
 tags: [design, jekyll]
