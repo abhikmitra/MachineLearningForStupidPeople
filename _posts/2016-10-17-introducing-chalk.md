@@ -5,7 +5,7 @@ description: "Chalk is a high quality, completely customizable, performant and 1
 tags: [web, jekyll]
 ---
 
-{% include image.html path="documentation/chalk-intro.png" path-detail="documentation/chalk-intro@2x.png" alt="Chalk intro" %}
+{% include image.html path="assets/documentation/chalk-intro.png" path-detail="assets/documentation/chalk-intro@2x.png" alt="Chalk intro" %}
 
 [Download Chalk here!](https://github.com/nielsenramon/chalk)
 
