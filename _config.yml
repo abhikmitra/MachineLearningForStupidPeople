@@ -3,7 +3,7 @@
 name: MLForStupidPeople
 paginate: 25
 paginate_path: "/posts/page/:num/"
-url: 'https://abhikmitra.github.io/machineLearningForStupidPeople/'
+url: 'https://abhikmitra.github.io/machineLearningForStupidPeople'
 blog_theme: dark # Or use dark
 
 # Optional settings
