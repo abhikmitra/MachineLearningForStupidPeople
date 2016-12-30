@@ -20,10 +20,10 @@
 
   <link rel="apple-touch-icon" href="{% asset_path apple-touch-icon.png %}">
   <link href="{{ 'feed.xml' | absolute_url }}" type="application/rss+xml" rel="alternate" title="{{ site.name }} Last 10 blog posts" />
-  <link href="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/dark.css " rel="stylesheet">
+  <link href="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/dark.css" rel="stylesheet">
   {% if site.blog_theme == "light" %}
-    {% stylesheet light | absolute_url %}
+    {% stylesheet light %}
   {% else %}
-    {% stylesheet dark | absolute_url %}
+    {% stylesheet dark %}
   {% endif %}
 </head>
