@@ -1,20 +1,18 @@
----
----
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
-    <title>{{ site.name | xml_escape }}</title>
-    <description>{% if site.description %}{{ site.description | xml_escape }}{% endif %}</description>
-    <link>{{ site.url }}</link>
-    <atom:link href="{{ page.path | absolute_url }}" rel="self" type="application/rss+xml" />
-    {% for post in site.posts limit:10 %}
+    <title>MLForStupidPeople</title>
+    <description></description>
+    <link>https://abhikmitra.github.io/machineLearningForStupidPeople</link>
+    <atom:link href="https://abhikmitra.github.io/machineLearningForStupidPeople/feed.xml" rel="self" type="application/rss+xml" />
+    
       <item>
-        <title>{{ post.title | xml_escape }}</title>
-        <description>{{ post.description | xml_escape }}</description>
-        <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
-        <link>{{ post.url | absolute_url }}</link>
-        <guid isPermaLink="true">{{ post.url | absolute_url }}</guid>
+        <title>Neural Network for Stupid People</title>
+        <description>Trying to make sense of ANN without knowing shit!</description>
+        <pubDate>Sat, 31 Dec 2016 00:00:00 +0530</pubDate>
+        <link>https://abhikmitra.github.io/machineLearningForStupidPeople/posts/neural-net-for-stupid-people</link>
+        <guid isPermaLink="true">https://abhikmitra.github.io/machineLearningForStupidPeople/posts/neural-net-for-stupid-people</guid>
       </item>
-    {% endfor %}
+    
   </channel>
 </rss>

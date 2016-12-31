@@ -1,0 +1,416 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>MLForStupidPeople | Neural Network for Stupid People</title>
+  <meta name="description" content="Trying to make sense of ANN without knowing shit!">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta property="og:title" content="Neural Network for Stupid People">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://abhikmitra.github.io/machineLearningForStupidPeople/posts/neural-net-for-stupid-people">
+  <meta property="og:description" content="Trying to make sense of ANN without knowing shit!">
+  <meta property="og:site_name" content="MLForStupidPeople">
+  <meta property="og:image" content="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neural-networks.jpg">
+
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:url" content="https://abhikmitra.github.io/machineLearningForStupidPeople/posts/neural-net-for-stupid-people">
+  <meta name="twitter:title" content="Neural Network for Stupid People">
+  <meta name="twitter:description" content="Trying to make sense of ANN without knowing shit!">
+  <meta name="twitter:image" content="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neural-networks.jpg">
+
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link href="https://abhikmitra.github.io/machineLearningForStupidPeople/feed.xml" type="application/rss+xml" rel="alternate" title="MLForStupidPeople Last 10 blog posts" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.css" rel="stylesheet">
+  <link href="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/dark.css" rel="stylesheet">
+  
+    <link type="text/css" rel="stylesheet" href="/assets/dark.css">
+  
+</head>
+
+<body>
+  <main role="main">
+    <div class="grid grid-centered">
+      <div class="grid-cell">
+        <nav class="header-nav reveal">
+  <a href="https://abhikmitra.github.io/machineLearningForStupidPeople/" class="header-logo" title="MLForStupidPeople">MLForStupidPeople</a>
+  <ul class="header-links">
+    
+    
+      <li>
+        <a href="https://twitter.com/complancoder" target="_blank" title="Twitter">
+          <span class="icon icon-social-twitter"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://www.facebook.com/abhikmitra" target="_blank" title="Facebook">
+          <span class="icon icon-social-facebook"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://github.com/abhikmitra" target="_blank" title="GitHub">
+          <span class="icon icon-social-github"></span>
+        </a>
+      </li>
+    
+    
+    
+    
+      <li>
+        <a href="https://www.linkedin.com/in/iamabhik" target="_blank" title="LinkedIn">
+          <span class="icon icon-social-linkedin"></span>
+        </a>
+      </li>
+    
+    
+    
+      <li>
+        <a href="mailto:abhikprince@gmail.com" title="Email">
+          <span class="icon icon-at"></span>
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="https://abhikmitra.github.io/machineLearningForStupidPeople/feed.xml" target="_blank" title="RSS">
+          <span class="icon icon-social-rss"></span>
+        </a>
+      </li>
+    
+  </ul>
+</nav>
+
+        <article class="article reveal">
+          <header class="article-header">
+            <h1>Neural Network for Stupid People</h1>
+            <p>Trying to make sense of ANN without knowing shit!</p>
+            <div class="article-list-footer">
+              <span class="article-list-date">
+                December 31, 2016
+              </span>
+              <span class="article-list-divider">-</span>
+              <span class="article-list-minutes">
+                
+                
+                  5 minute read
+                
+              </span>
+              <span class="article-list-divider">-</span>
+              <div class="article-list-tags">
+                
+                  <a href="/tag/machine Learning">machine Learning</a>
+                
+                  <a href="/tag/neural networks">neural networks</a>
+                
+                  <a href="/tag/deep learning">deep learning</a>
+                
+              </div>
+            </div>
+          </header>
+
+          <div class="article-content">
+            <blockquote>
+  <p>I am a stupid guy.</p>
+</blockquote>
+
+<p>I have been doing the <a href="http://course.fast.ai/">course on Deep Learning</a>, where the author does a great job of teaching. While doing the course I  found a dearth of ‘easy’ material on the web regarding neural nets. 
+Here I am trying to collate what I saw across multiple learning resources and try to make sense of it. This is not an article that you should see if you have not tried other materials. Once you read other materials and get confused , come back here :)</p>
+
+<p>So an excellent way to start understanding neural network is with this <a href="https://youtu.be/e3aM6XTekJc?t=3810" title="Neural Networks in Excel">video</a> where Jeremy uses Microsoft Excel to make a Deep Neural Network. Here are the <a href="http://wiki.fast.ai/index.php/Lesson_2_Notes" title="Neural Networks in Excel">notes</a> if you dont like videos</p>
+
+<p><img src="http://wiki.fast.ai/images/e/e2/NN_spreadsheet_input_output.jpg" description="lil" title="The values in the purple circle belong to our input vector, and the values in the yellow circle belong to our target vector y. We want to perform a series of matrix products to get as close to the target vector y as possible" alt="The values in the purple circle belong to our input vector, and the values in the yellow circle belong to our target vector y. We want to perform a series of matrix products to get as close to the target vector y as possible" width="400" border="10" />
+Our target would be take a more real example and try to fit it inside his excel model for our better understanding.</p>
+
+<h5 id="problem-statement">Problem statement</h5>
+
+<blockquote>
+  <p>For all guys aged 27 , given the hour of exercise and sleep , estimate their metabolic age ( metabolic age is a metric used health clubs to figure out whether your body is functioning like a 18 year old or a 40 year old) .</p>
+</blockquote>
+
+<h5 id="data-set">Data Set</h5>
+
+<table>
+  <thead>
+    <tr>
+      <th>Exercise (hours)</th>
+      <th style="text-align: center">Sleep  (hours)</th>
+      <th style="text-align: right">Metabolic Age (years)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td style="text-align: center">8</td>
+      <td style="text-align: right">27</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td style="text-align: center">7</td>
+      <td style="text-align: right">23</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td style="text-align: center">6</td>
+      <td style="text-align: right">22</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>This is the data we are going to use to train our network.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HE</th>
+      <th style="text-align: center">HS</th>
+      <th style="text-align: right">MA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2</td>
+      <td style="text-align: center">8</td>
+      <td style="text-align: right">27</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/excel_1.png" class="fluidbox-trigger">
+  <img src="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/excel_1.png" alt="Excel" />
+</a></p>
+
+<p>Which basically means</p>
+
+<p><a href="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neural_network_blackbox.png" class="fluidbox-trigger">
+  <img src="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neural_network_blackbox.png" alt="Excel" />
+</a></p>
+
+<h3 id="step-1--standardize-units">Step 1 : Standardize Units</h3>
+<hr />
+<p>As we see, the input is in hours and the output is in years. Neural network can have inputs like a 220 x 220 and an output could be a category ( dog, human , chair , etc) .
+ So you can see the input and output units are completely different.</p>
+
+<p>So the most common approach is to scale the inputs and outputs between 0 and 1</p>
+
+<blockquote>
+  <p>HoursOfSleep(HS) = HS / max(HS)</p>
+</blockquote>
+
+<blockquote>
+  <p>HoursOfExercise(HE) = HE / max(HE)</p>
+</blockquote>
+
+<blockquote>
+  <p>MetabolicAge(MA) = ME / max(MA)</p>
+</blockquote>
+
+<p>lets Assume max(HS) = 12 , max(HE) = 6, max(MA) = 50</p>
+
+<p>So the input now becomes ,</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>HE</th>
+      <th style="text-align: center">HS</th>
+      <th style="text-align: right">MA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0.33</td>
+      <td style="text-align: center">0.67</td>
+      <td style="text-align: right">0.54</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="step-2--identify-the-problem">Step 2 : Identify the problem</h3>
+<hr />
+
+<p>Lets try to identify the class of problem</p>
+
+<blockquote>
+  <p>Does the data set have inputs and outputs ?</p>
+</blockquote>
+
+<p>Its a supervised problem</p>
+
+<blockquote>
+  <p>Is the output data continuous?</p>
+</blockquote>
+
+<p>Yes. the value can be anything between 0 to 1 . And as we know there are infinite values between 0 and 1. If the output would be specific data like “FIT” , “UNFIT” then it would be a classification problem</p>
+
+<h3 id="step-3--design-the-neural-network">Step 3 : Design the Neural Network</h3>
+<hr />
+
+<p>Our goal here is to just understand, so I just put in a random arbitrary network that I got from <a href="http://karpathy.github.io/neuralnets/">here</a></p>
+
+<p>The networks really dont make much sense here since all the inputs are positive.</p>
+
+<p><a href="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neural_network_design_1.png" class="fluidbox-trigger">
+  <img src="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neural_network_design_1.png" alt="neural_network_design" />
+</a></p>
+
+<p>Lets define some terms</p>
+
+<ol>
+  <li>HE and HS are called Input Layer or input neurons</li>
+  <li>All the arrows ( except the last one giving MA) are called synapses</li>
+  <li>Each synapse adds a specific weight to the Input - which means it multiplies the input by a number called weight</li>
+  <li>The middle layer of 3 empty circle is our hidden layer or hidden neurons</li>
+</ol>
+
+<blockquote>
+  <p>What is a Neuron ?</p>
+</blockquote>
+
+<p>Its a non linear function. Thats all. Really !</p>
+
+<p>Let that non Linear function be ReLU which is a fancy term for</p>
+
+<p>f(x) = max(0, x)</p>
+
+<p>So what does our Neural Network look like now ?</p>
+
+<p><a href="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neural_network_design_final.png" class="fluidbox-trigger">
+  <img src="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neural_network_design_final.png" alt="neural_network_design" />
+</a></p>
+
+<p>In equation it looks like</p>
+
+<blockquote>
+  <p>n1 = Math.max(0, WE1 * HE + WS1 * HS )</p>
+</blockquote>
+
+<blockquote>
+  <p>n2 = Math.max(0, WE2 * HE + WS2 * HS )</p>
+</blockquote>
+
+<blockquote>
+  <p>n3 = Math.max(0, WE3 * HE + WS3 * HS )</p>
+</blockquote>
+
+<blockquote>
+  <p>MA = WA * n1 + WB * n2 + WC * n3</p>
+</blockquote>
+
+<blockquote>
+  <p>What are the responsibility of the neuron</p>
+</blockquote>
+
+<ol>
+  <li>Receive all the Synapses</li>
+  <li>Sum all the synapse</li>
+  <li>Apply the activation function (Which is ReLU in ur case)</li>
+</ol>
+
+<p>If we want to view this as a series of matrix multiplication , this is how it will look like</p>
+
+<p><a href="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neuron_toplevel.png" class="fluidbox-trigger">
+  <img src="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neuron_toplevel.png" alt="neural_network_design" />
+</a></p>
+
+<h3 id="step-4--train-the-network">Step 4 : Train the network</h3>
+<hr />
+
+<p>Training the network basically means adjusting the value of the weights, in our case it is WE1 , WE2, WE3, WS1, WS2 , WS3 , WA, WB and WC. 
+We input the given values HE and HS and check the output if MA is correct. So if HE and HS is 0.33 and 0.67 respectively, a number close to 0.54 is what we would expect. 
+If not we tune the values of the weights till we get a reasonably good result.</p>
+
+<blockquote>
+  <p>How do we define a reasonably good result ?</p>
+</blockquote>
+
+<p>We define it by the loss function (cost function) . In our case it can be a simple  (correct_MA - predicted_ma)^2 . We have to try and minimize the function</p>
+
+<blockquote>
+  <p>How do we minimize the function ?</p>
+</blockquote>
+
+<p>By taking the derivative of the LostFn with respect to each of the weights. (Partial Derivative) . You just need to remember why we needed derivation and not get bogged down by the rules</p>
+
+<p>Going Forward</p>
+
+<p>There are still lot of stuff to learn like</p>
+
+<ol>
+  <li>SGD</li>
+  <li>Back propagation</li>
+  <li>Bias</li>
+</ol>
+
+<p>But now you have a model of Neural Network in your mind. Having this model helps you visualize the math that is going to come .</p>
+
+<h3 id="the-end">The End</h3>
+<hr />
+
+<p>If you spot and mistake in the above writing , it probably means there is some mistake in my understanding and it will help me rectify it</p>
+
+          </div>
+
+          <div class="article-share">
+            
+            <a href="" title="Share on Twitter" onclick="window.open('https://twitter.com/home?status=Neural Network for Stupid People - https://abhikmitra.github.io/machineLearningForStupidPeople/posts/neural-net-for-stupid-people by @complancoder', 'newwindow', 'width=500, height=225'); return false;">
+              <span class="icon icon-social-twitter"></span>
+            </a>
+            <a href="" title="Share on Facebook" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u=https://abhikmitra.github.io/machineLearningForStupidPeople/posts/neural-net-for-stupid-people', 'newwindow', 'width=500, height=500'); return false;">
+              <span class="icon icon-social-facebook"></span>
+            </a>
+            <a href="" title="Share on Google+" onclick="window.open('https://plus.google.com/share?url=https://abhikmitra.github.io/machineLearningForStupidPeople/posts/neural-net-for-stupid-people', 'newwindow', 'width=550, height=400'); return false;">
+              <span class="icon icon-social-googleplus"></span>
+            </a>
+          </div>
+
+          
+            <div id="disqus_thread" class="article-comments"></div>
+            <script>
+              (function() {
+                  var d = document, s = d.createElement('script');
+                  s.src = '//machinelearningforstupidpeople.disqus.com/embed.js';
+                  s.setAttribute('data-timestamp', +new Date());
+                  (d.head || d.body).appendChild(s);
+              })();
+            </script>
+            <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+          
+        </article>
+        <footer class="footer reveal">
+  <p>
+    <a href="https://abhikmitra.github.io" title="About me">Maintained by Abhik Mitra</a>.
+  </p>
+</footer>
+
+      </div>
+    </div>
+  </main>
+  <script type="text/javascript" src="/assets/vendor.js"></script>
+<script type="text/javascript" src="/assets/application.js"></script>
+
+<script src="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/vendor.js"></script>
+<script src="https://abhikmitra.github.io/machineLearningForStupidPeople/assets/application.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+  WebFont.load({
+    google: {
+      families: ['Cormorant Garamond:700', 'Lato:300,400,700']
+    }
+  });
+</script>
+
+
+  <script>
+    window.ga=function(){ga.q.push(arguments)};ga.q=[];ga.l=+new Date;
+    ga('create','UA-89644403-1','auto');ga('send','pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async defer></script>
+
+
+</body>
+</html>
