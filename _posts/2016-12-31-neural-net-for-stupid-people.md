@@ -7,7 +7,7 @@ tags: [machine Learning, neural networks, deep learning]
 ---
 > I am a stupid guy.
 
-I have been doing the [course on Deep Learning](http://course.fast.ai/), where the author does a great job of teaching. While doing the course I really found the dearth of 'easy' material on the web regarding neural nets. 
+I have been doing the [course on Deep Learning](http://course.fast.ai/), where the author does a great job of teaching. While doing the course I  found a dearth of 'easy' material on the web regarding neural nets. 
 Here I am trying to collate what I saw across multiple learning resources and try to make sense of it. This is not an article that you should see if you have not tried other materials. Once you read other materials and get confused , come back here :) 
 
 So an excellent way to start understanding neural network is with this [video](https://youtu.be/e3aM6XTekJc?t=3810 "Neural Networks in Excel") where Jeremy uses Microsoft Excel to make a Deep Neural Network. Here are the [notes](http://wiki.fast.ai/index.php/Lesson_2_Notes "Neural Networks in Excel") if you dont like videos
