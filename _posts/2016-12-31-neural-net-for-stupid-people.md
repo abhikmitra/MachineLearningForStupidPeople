@@ -2,7 +2,7 @@
 layout: post
 title: "Neural Network for Stupid People"
 description: "Trying to make sense of ANN without knowing shit!"
-og_image: "documentation/neural-networks.jpg"
+og_test: "https://abhikmitra.github.io/machineLearningForStupidPeople/assets/documentation/neural-networks.jpg"
 tags: [machine Learning, neural networks, deep learning]
 ---
 > I am a stupid guy.
